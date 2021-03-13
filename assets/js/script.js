@@ -1,17 +1,37 @@
 let searchInput = $('.search-input');
-let geocodeUrl = 'https://maps.googleapis.com/maps/api/geocode/json?';
-let apiKey = '&key=AIzaSyAv0lbkZaNS64EIJ7todpgUcLBAYfnjJn8';
+let currentApi = 'https://api.openweathermap.org/data/2.5/weather?q=';
+let sunriseApi = 'https://api.sunrise-sunset.org/json?'
+let apiKey = '&appid=cffe501940779b25824bab372a571e3e';
 
 function getCurrentApi(requestUrl) {
     fetch(requestUrl)
+        .then(function (response) {
+            return response.json();
+        })
         .then(function (data) {
             console.log(data);
-
+            let lon = data.coord.lon;
+            let lat = data.coord.lat;
+            getSunriseApi(lat,lon);
         });
+}
+function getSunriseApi(lat, lon){
+    let latParam = 'lat=' + lat;
+    let lonParam = 'lng=' + lon;
+    let finalApiString = sunriseApi + latParam + '&' + lonParam;
+    fetch(finalApiString)
+        .then(function (response){
+            return response.json();
+        })
+        .then(function (data){
+            console.log(data);
+        })
+
 }
 $('.searchbtn').on('click', function(event){
     event.preventDefault();
-    let location = searchInput.val();
-    let finalApiStr = geocodeUrl + 'address=' + location + apiKey;
-    getCurrentApi(finalApiStr);
+    let city = $('.search-input').val();
+    let finalCurrentWeather = currentApi + city + apiKey;
+    getCurrentApi(finalCurrentWeather);
+
 })

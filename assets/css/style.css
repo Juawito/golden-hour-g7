@@ -1,3 +1,23 @@
+body {
+    background-color: #FDE599;
+}
+
 h1 {
     font-family: 'Ranchers', cursive;
+    color: white;
+}
+
+p {
+    font-family: 'Raleway', sans-serif;
+    padding-bottom: 2em;
+    font-size: 20px;
+    color: slategray;
+}
+
+div {
+    font-family: 'Raleway', sans-serif;
+}
+
+label {
+    font-size: 16px;
 }
