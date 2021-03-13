@@ -25,13 +25,15 @@ function getSunriseApi(lat, lon){
         })
         .then(function (data){
             console.log(data);
+            let sunriseTime = data.sunrise;
+            let sunsetTime = data.sunset;
+            rendertSunTimes( sunriseTime, sunsetTime);
         })
-
 }
 $('.searchbtn').on('click', function(event){
     event.preventDefault();
     let city = $('.search-input').val();
     let finalCurrentWeather = currentApi + city + apiKey;
     getCurrentApi(finalCurrentWeather);
-
+    document.location.replace('../pages/sunrise-sunset.html');
 })
