@@ -12,28 +12,28 @@ function getCurrentApi(requestUrl) {
             console.log(data);
             let lon = data.coord.lon;
             let lat = data.coord.lat;
-            getSunriseApi(lat,lon);
+            getSunriseApi(lat, lon);
         });
 }
-function getSunriseApi(lat, lon){
+function getSunriseApi(lat, lon) {
     let latParam = 'lat=' + lat;
     let lonParam = 'lng=' + lon;
     let finalApiString = sunriseApi + latParam + '&' + lonParam;
     fetch(finalApiString)
-        .then(function (response){
+        .then(function (response) {
             return response.json();
         })
-        .then(function (data){
+        .then(function (data) {
             console.log(data);
             let sunriseTime = data.sunrise;
             let sunsetTime = data.sunset;
-            rendertSunTimes( sunriseTime, sunsetTime);
+            rendertSunTimes(sunriseTime, sunsetTime);
         })
 }
-$('.searchbtn').on('click', function(event){
+$('.searchbtn').on('click', function (event) {
     event.preventDefault();
     let city = $('.search-input').val();
     let finalCurrentWeather = currentApi + city + apiKey;
     getCurrentApi(finalCurrentWeather);
-    document.location.replace('../pages/sunrise-sunset.html');
+    document.location.replace('sunrise-sunset.html');
 })
