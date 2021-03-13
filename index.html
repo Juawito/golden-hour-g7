@@ -1,15 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <title>Golden Sun</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
 </head>
+
 <body>
+    <header class="col amber lighten-1 center-align">
+        <h1>GoldenSun</h1>
+        <p>An application that allows users to find the time of sunrise and sunset for a given location</p>
+    </header>
+    <div class="container">
+        <div class="center-align">
+            <h4>Where are you located? Enter Below</h4>
+            <div>
+                <label for="location">Current Location for Sunrise and Sunset</label>
+                <input type="text" class="center-align" placeholder="Enter Location" />
+            </div>
+            <button class="hoverable">Search</button>
+        </div>
+    </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="./assets/js/script.js"></script>
 </body>
+
 </html>
