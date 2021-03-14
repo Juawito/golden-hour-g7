@@ -35,5 +35,5 @@ $('.searchbtn').on('click', function (event) {
     let city = $('.search-input').val();
     let finalCurrentWeather = currentApi + city + apiKey;
     getCurrentApi(finalCurrentWeather);
-    document.location.replace('sunrise-sunset.html');
+    // document.location.replace('sunrise-sunset.html');
 })
