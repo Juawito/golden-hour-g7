@@ -30,6 +30,24 @@ function getSunriseApi(lat, lon) {
             rendertSunTimes(sunriseTime, sunsetTime);
         })
 }
+function rendertSunTimes (sunriseTime, sunsetTime){
+    let sunTimesArr = [sunriseTime,sunsetTime];
+    for (let i = 0; i < sunTimesArr.length; i++){
+        let cardBody = $('div'.attr('class','card'));
+        let cardImageEl = $('div'.attr('class','card-image'));
+        let cardContentEl = $('div'.attr('class','card-content'));
+        let cardImage = $('img').attr('src','images/sample-1.jpg');
+        let cardTitle = $('span').attr('class', 'card-title').text('Card Title');
+        cardImageEl.append(cardImage);
+        cardImageEl.append(cardTitle);
+        cardBody.append(cardImageEl);
+
+
+    }
+    $('div'.addClass('card-action'));
+    console.log(sunTimesArr);
+
+}
 $('.searchbtn').on('click', function (event) {
     event.preventDefault();
     let city = $('.search-input').val();
