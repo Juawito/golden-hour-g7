@@ -1,3 +1,47 @@
+:root {
+    --teal: #1E6487;
+    --ltyellow: #FDE599;
+    --darkorange: #F66202;
+    --ltteal: #91B7BC ;
+    --deepnavy: #08183A;
+    --navy: #152852;
+    --purple: #483D60;
+    --coral: #FD5E53;
+    --orange: #FC9C54;
+    --yellow: #FFE373;
+}
+
+body {
+    background-color: var(--ltyellow);
+}
+
 h1 {
     font-family: 'Ranchers', cursive;
+    color: var(--teal);
+    padding-top: 30px;
+}
+
+header {
+    background-image: url("../images/banner.png");
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+}
+
+p {
+    font-family: 'Raleway', sans-serif;
+    padding-bottom: 2em;
+    font-size: 20px;
+    color: var(--teal);
+}
+
+div {
+    font-family: 'Raleway', sans-serif;
+    background-color: var(--coral);
+    border-radius: 5%;
+    padding: 20px;
+}
+
+h4 {
+    color: var(--teal);
 }
