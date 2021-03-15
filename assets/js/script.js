@@ -12,26 +12,51 @@ function getCurrentApi(requestUrl) {
             console.log(data);
             let lon = data.coord.lon;
             let lat = data.coord.lat;
-            getSunriseApi(lat,lon);
+            getSunriseApi(lat, lon);
         });
 }
-function getSunriseApi(lat, lon){
+function getSunriseApi(lat, lon) {
     let latParam = 'lat=' + lat;
     let lonParam = 'lng=' + lon;
     let finalApiString = sunriseApi + latParam + '&' + lonParam;
     fetch(finalApiString)
-        .then(function (response){
+        .then(function (response) {
             return response.json();
         })
-        .then(function (data){
+        .then(function (data) {
             console.log(data);
+            let sunriseTime = data.results.sunrise;
+            let sunsetTime = data.results.sunset;
+            rendertSunTimes(sunriseTime, sunsetTime);
         })
-
 }
-$('.searchbtn').on('click', function(event){
+function rendertSunTimes(sunriseTime, sunsetTime){
+    // let sunTimesArr = [sunriseTime,sunsetTime];
+    // for (let i = 0; i < sunTimesArr.length; i++){
+    //     let cardBody = $('div'.attr('class','card'));
+    //     let cardImageEl = $('div'.attr('class','card-image'));
+    //     let cardContentEl = $('div'.attr('class','card-content'));
+    //     let cardImage = $('img').attr('src','images/sample-1.jpg');
+    //     let cardTitle = $('span').attr('class', 'card-title').text('Card Title');
+    //     cardImageEl.append(cardImage);
+    //     cardImageEl.append(cardTitle);
+    //     cardBody.append(cardImageEl);
+    //     console.log(cardImage);
+
+
+    // }
+    // $('div'.addClass('card-action'));
+    // console.log(sunTimesArr);
+    let cardContent = $('.card-content');
+    // console.log(cardContent.text(sunsetTime));
+    let content = $('<p>')
+    content.text(sunsetTime);
+    cardContent.append(content);
+}
+$('.searchbtn').on('click', function (event) {
     event.preventDefault();
     let city = $('.search-input').val();
     let finalCurrentWeather = currentApi + city + apiKey;
     getCurrentApi(finalCurrentWeather);
-
+    document.location.replace('sunrise-sunset.html');
 })
