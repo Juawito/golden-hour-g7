@@ -10,17 +10,28 @@ function getCurrentApi(requestUrl) {
         })
         .then(function (data) {
             console.log(data);
+            // console.log(data.sys.sunrise);
+            // console.log(data.sys.sunset);
             let lon = data.coord.lon;
             let lat = data.coord.lat;
-            console.log(lon);
-            console.log(lat);
-            getSunriseApi(lat, lon);
+            // let unixTimestamp = data.dt;
+            // convertUnixToDate(unixTimestamp);
+            // console.log(lon);
+            // console.log(lat);
+            // getSunriseApi(lat, lon);
         });
 }
-function getSunriseApi(lat, lon){
+function convertUnixToDate(unixTimestamp) {
+    let unixTime = unixTimestamp * 1000;
+    let dateObject = new Date(unixTime);
+    let dateFormat = dateObject.toLocaleString()
+    console.log(dateFormat);
+}
+function getSunriseApi(lat, lon) {
     let latParam = 'lat=' + lat;
     let lonParam = 'lng=' + lon;
-    let finalApiString = sunriseApi + latParam + '&' + lonParam;
+    let date = '&date=';
+    let finalApiString = sunriseApi + latParam + '&' + lonParam + date + 'today' + '&formatted=0';
     fetch(finalApiString)
         .then(function (response) {
             return response.json();
@@ -33,11 +44,11 @@ function getSunriseApi(lat, lon){
                 sunrise: sunriseTime,
                 sunset: sunsetTime
             }
-            localStorage.setItem('Suntimes', JSON.stringify(sunTimes));
+            // localStorage.setItem('Suntimes', JSON.stringify(sunTimes));
         })
-        .then(function(){
-            document.location.replace('sunrise-sunset.html');
-        });
+    // .then(function(){
+    //     document.location.replace('sunrise-sunset.html');
+    // });
 }
 $('.searchbtn').on('click', function (event) {
     event.preventDefault();
