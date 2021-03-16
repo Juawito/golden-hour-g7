@@ -2,6 +2,10 @@ let searchInput = $('.search-input');
 let currentApi = 'https://api.geocod.io/v1.6/geocode?';
 let sunriseApi = 'https://api.sunrise-sunset.org/json?'
 let apiKey = '&api_key=f4ea0e36fa26426ef641161fff3673044056a24';
+// format for dates => YYYY-MM-DD
+// console.log(sunriseTime);
+// let dayJSExample = dayjs(sunriseTime).format("YYYY-MM-DD");
+// console.log(dayJSExample);
 
 function getCurrentApi(requestUrl) {
     fetch(requestUrl)
@@ -17,12 +21,6 @@ function getCurrentApi(requestUrl) {
             getSunriseApi(lat, lon);
         });
 }
-function convertUnixToDate(unixTimestamp) {
-    let unixTime = unixTimestamp * 1000;
-    let dateObject = new Date(unixTime);
-    let dateFormat = dateObject.toLocaleString()
-    console.log(dateFormat);
-}
 function getSunriseApi(lat, lon) {
     let latParam = 'lat=' + lat;
     let lonParam = 'lng=' + lon;
@@ -34,7 +32,7 @@ function getSunriseApi(lat, lon) {
         })
         .then(function (data) {
             console.log(data);
-            function convertUtcToEst(time){
+            function convertUtcToEst(time) {
                 let date = new Date(time);
                 return date.toString();
             }
@@ -61,3 +59,6 @@ $('.searchbtn').on('click', function (event) {
     let finalApiString = currentApi + zipCode + apiKey;
     getCurrentApi(finalApiString);
 })
+$(document).ready(function(){
+    $('.datepicker').datepicker();
+  });
