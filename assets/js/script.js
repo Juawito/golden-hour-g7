@@ -1,7 +1,7 @@
 let searchInput = $('.search-input');
-let currentApi = 'https://api.openweathermap.org/data/2.5/weather?q=';
+let currentApi = 'https://api.geocod.io/v1.6/geocode?';
 let sunriseApi = 'https://api.sunrise-sunset.org/json?'
-let apiKey = '&appid=cffe501940779b25824bab372a571e3e';
+let apiKey = '&api_key=f4ea0e36fa26426ef641161fff3673044056a24';
 
 function getCurrentApi(requestUrl) {
     fetch(requestUrl)
@@ -10,15 +10,11 @@ function getCurrentApi(requestUrl) {
         })
         .then(function (data) {
             console.log(data);
-            // console.log(data.sys.sunrise);
-            // console.log(data.sys.sunset);
-            let lon = data.coord.lon;
-            let lat = data.coord.lat;
-            // let unixTimestamp = data.dt;
-            // convertUnixToDate(unixTimestamp);
-            // console.log(lon);
-            // console.log(lat);
-            // getSunriseApi(lat, lon);
+            let lat = data.results[0].location.lat;
+            let lon = data.results[0].location.lng;
+            console.log(lon);
+            console.log(lat);
+            getSunriseApi(lat, lon);
         });
 }
 function convertUnixToDate(unixTimestamp) {
@@ -38,21 +34,30 @@ function getSunriseApi(lat, lon) {
         })
         .then(function (data) {
             console.log(data);
+            function convertUtcToEst(time){
+                let date = new Date(time);
+                return date.toString();
+            }
             let sunriseTime = data.results.sunrise;
             let sunsetTime = data.results.sunset;
+            let localSunriseTime = convertUtcToEst(sunriseTime);
+            let localSunsetTime = convertUtcToEst(sunsetTime);
+            console.log(localSunriseTime);
+            console.log(localSunsetTime);
             let sunTimes = {
-                sunrise: sunriseTime,
-                sunset: sunsetTime
+                sunrise: localSunriseTime,
+                sunset: localSunsetTime
             }
-            // localStorage.setItem('Suntimes', JSON.stringify(sunTimes));
+            localStorage.setItem('Suntimes', JSON.stringify(sunTimes));
         })
-    // .then(function(){
-    //     document.location.replace('sunrise-sunset.html');
-    // });
+    .then(function(){
+        document.location.replace('sunrise-sunset.html');
+    });
 }
 $('.searchbtn').on('click', function (event) {
     event.preventDefault();
-    let city = $('.search-input').val();
-    let finalCurrentWeather = currentApi + city + apiKey;
-    getCurrentApi(finalCurrentWeather);
+    let zipCode = $('.search-input').val();
+    zipCode = 'postal_code=' + zipCode;
+    let finalApiString = currentApi + zipCode + apiKey;
+    getCurrentApi(finalApiString);
 })
