@@ -11,6 +11,10 @@
     --yellow: #FFE373;
 }
 
+button i {
+    color: var(--ltyellow);
+}
+
 body {
     background-color: var(--ltyellow);
 }
@@ -32,7 +36,6 @@ p {
     font-family: 'Raleway', sans-serif;
     padding-bottom: 2em;
     font-size: 20px;
-    color: var(--teal);
 }
 
 div {
@@ -44,4 +47,22 @@ div {
 
 h4 {
     color: var(--teal);
+}
+
+.sunrise-card {
+    background-color: var(--orange);
+}
+
+.sunset-card {
+    background-color: var(--deepnavy);
+}
+
+#card-one {
+    background-color: var(--yellow);
+    color: var(--deepnavy);
+}
+
+#card-two {
+    background-color: var(--navy);
+    color: var(--ltyellow);
 }
