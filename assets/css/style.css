@@ -13,7 +13,10 @@
 }
 
 body {
-    background-color: var(--ltyellow);
+    background-image: url(../images/jorge-vasconez-c4cWawGBFv8-unsplash.jpg);
+    background-size: cover;
+    background-position: center;
+    height: fit-content;
 }
 
 header {
