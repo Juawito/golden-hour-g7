@@ -9,6 +9,7 @@
     --coral: #FD5E53;
     --orange: #FC9C54;
     --yellow: #FFE373;
+    --deeporange: #fc7f1f;
 }
 
 button i {
@@ -35,18 +36,21 @@ header {
 p {
     font-family: 'Raleway', sans-serif;
     padding-bottom: 2em;
+}
+
+header p {
     font-size: 20px;
 }
 
 div {
     font-family: 'Raleway', sans-serif;
-    background-color: var(--coral);
-    border-radius: 5%;
+    background-color: var(--deeporange);
+    border-radius: 20px;
     padding: 20px;
 }
 
 h4 {
-    color: var(--teal);
+    color: var(--deepnavy);
 }
 
 .sunrise-card {
@@ -60,9 +64,11 @@ h4 {
 #card-one {
     background-color: var(--yellow);
     color: var(--deepnavy);
+    font-size: 30px;
 }
 
 #card-two {
     background-color: var(--navy);
     color: var(--ltyellow);
+    font-size: 30px;
 }
