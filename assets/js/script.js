@@ -9,11 +9,8 @@ function getCurrentApi(requestUrl) {
             return response.json();
         })
         .then(function (data) {
-            console.log(data);
             let lat = data.results[0].location.lat;
             let lon = data.results[0].location.lng;
-            console.log(lon);
-            console.log(lat);
             getSunriseApi(lat, lon);
         });
 }
@@ -28,17 +25,14 @@ function getSunriseApi(lat, lon) {
             return response.json();
         })
         .then(function (data) {
-            console.log(data);
-            function convertUtcToEst(time) {
+            function converUtcToLocal(time) {
                 let date = new Date(time);
                 return date.toString();
             }
             let sunriseTime = data.results.sunrise;
             let sunsetTime = data.results.sunset;
-            let localSunriseTime = convertUtcToEst(sunriseTime);
-            let localSunsetTime = convertUtcToEst(sunsetTime);
-            console.log(localSunriseTime);
-            console.log(localSunsetTime);
+            let localSunriseTime = converUtcToLocal(sunriseTime);
+            let localSunsetTime = converUtcToLocal(sunsetTime);
             let sunTimes = {
                 sunrise: localSunriseTime,
                 sunset: localSunsetTime
