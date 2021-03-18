@@ -26,12 +26,12 @@ h1 {
     padding-top: 10px;
 }
 
-header {
+/* header {
     background-image: url("../images/banner.png");
     background-size: cover;
     background-position: center;
     height: 100%;
-}
+} */
 
 p {
     font-family: 'Raleway', sans-serif;
