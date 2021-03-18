@@ -17,12 +17,15 @@ button i {
 }
 
 body {
-    background-color: var(--ltyellow);
+    background-image: url(../images/jorge-vasconez-c4cWawGBFv8-unsplash.jpg);
+    background-size: cover;
+    background-position: center;
+    height: fit-content;
 }
 
 h1 {
     font-family: 'Ranchers', cursive;
-    color: var(--teal);
+    color: var(--purple);
     padding-top: 10px;
 }
 
@@ -40,17 +43,22 @@ p {
 
 header p {
     font-size: 20px;
+    color: var(--navy);
 }
 
 div {
     font-family: 'Raleway', sans-serif;
-    background-color: var(--deeporange);
     border-radius: 20px;
     padding: 20px;
 }
 
+#main-box {
+    background: rgba(91, 62, 95, 0.6);
+}
+
 h4 {
     color: var(--deepnavy);
+    font-weight: bold;
 }
 
 .sunrise-card {

@@ -25,7 +25,7 @@ header {
 
 h1 {
     font-family: 'Ranchers', cursive;
-    color: var(--teal);
+    color: var(--purple);
     padding-top: 10px;
 }
 
@@ -38,9 +38,15 @@ p {
 
 div {
     font-family: 'Raleway', sans-serif;
+
     background-color: var(--deeporange);
     border-radius: 15px;
     padding: 20px;
+}
+
+#main-box {
+    background: rgba(91, 62, 95, 0.6);
+
 }
 
 h4 {
@@ -66,5 +72,10 @@ button i {
 }
 
 input {
-    color: var(--navy);
+    color: var(--yellow);
+}
+
+.modal {
+    background-color: var(--orange);
+    color: var(--purple);
 }
