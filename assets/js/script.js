@@ -2,6 +2,7 @@ let searchInput = $('.search-input');
 let currentApi = 'https://api.geocod.io/v1.6/geocode?';
 let sunriseApi = 'https://api.sunrise-sunset.org/json?'
 let apiKey = '&api_key=f4ea0e36fa26426ef641161fff3673044056a24';
+let zipCode;
 
 function getCurrentApi(requestUrl) {
     fetch(requestUrl)
@@ -39,13 +40,23 @@ function getSunriseApi(lat, lon) {
             }
             localStorage.setItem('Suntimes', JSON.stringify(sunTimes));
         })
-    .then(function(){
-        document.location.replace('sunrise-sunset.html');
-    });
+        .then(function () {
+            document.location.replace('sunrise-sunset.html');
+        });
 }
 $('.searchbtn').on('click', function (event) {
     event.preventDefault();
-    let zipCode = $('.search-input').val();
+    if ($.isNumeric($('.search-input').val()) &&
+        $('.search-input').val().length === 5 &&
+        $('.search-input').val() != '') {
+        zipCode = $('.search-input').val();
+    } else {
+        M.toast({
+            html: 'Please Enter a valid Zipcode!',
+            classes: 'rounded'
+        });
+        $('.search-input').val('');
+    }
     let date = $('.datepicker').val();
     localStorage.setItem('date', date);
     zipCode = 'postal_code=' + zipCode;
