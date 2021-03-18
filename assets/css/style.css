@@ -31,7 +31,7 @@ body {
 
 h1 {
     font-family: 'Ranchers', cursive;
-    color: var(--teal);
+    color: var(--purple);
     padding-top: 10px;
 }
 
@@ -46,20 +46,11 @@ div {
     font-family: 'Raleway', sans-serif;
     border-radius: 5%;
     padding: 20px;
-    z-index: 1;
-    background-color: var(--deeporange);
-    /* fill-opacity: 0.5; */
 }
 
-#bg-box {
-    background-color: var(--deeporange);
-    opacity: 0.6;
-    
+#main-box {
+    background: rgba(91, 62, 95, 0.6);
 }
-/* 
-#main-content {
-    opacity: 1.0;
-} */
 
 h4 {
     color: var(--navy);
@@ -85,5 +76,10 @@ button i {
 }
 
 input {
-    color: var(--navy);
+    color: var(--yellow);
+}
+
+.modal {
+    background-color: var(--orange);
+    color: var(--purple);
 }
