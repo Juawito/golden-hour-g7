@@ -23,7 +23,7 @@ body {
 h1 {
     font-family: 'Ranchers', cursive;
     color: var(--teal);
-    padding-top: 30px;
+    padding-top: 10px;
 }
 
 header {
@@ -71,4 +71,12 @@ h4 {
     background-color: var(--navy);
     color: var(--ltyellow);
     font-size: 30px;
+}
+
+#sunrise-icon {
+    color: var(--yellow);
+}
+
+#sunset-icon {
+    color: var(--yellow);
 }
