@@ -26,7 +26,7 @@ header {
 h1 {
     font-family: 'Ranchers', cursive;
     color: var(--teal);
-    padding-top: 30px;
+    padding-top: 10px;
 }
 
 p {
