@@ -25,7 +25,6 @@ GoldenHour is an app that allows photographer to find the “the golden hour” 
 
 ## SnapShot
 ![GoldenHour-Snapshots_01](https://user-images.githubusercontent.com/32470118/111876100-832de700-8973-11eb-9ec3-f986f1e3145f.jpg)
-<<<<<<< HEAD
 
 ```
 GoldenHour_01
@@ -52,12 +51,6 @@ Return values for current date and how it will display
 ![GoldenHour-Snapshots_05](https://user-images.githubusercontent.com/32470118/111876104-845f1400-8973-11eb-952d-35861f70bb4e.jpg)
 
 ```
-GoldenHour_04
+GoldenHour_05
 Return values for future date and how it will display
 ```
-=======
-![GoldenHour-Snapshots_02](https://user-images.githubusercontent.com/32470118/111876101-83c67d80-8973-11eb-8b43-42b4d64ef005.jpg)
-![GoldenHour-Snapshots_03](https://user-images.githubusercontent.com/32470118/111876102-83c67d80-8973-11eb-90c8-6b6054ad6ed0.jpg)
-![GoldenHour-Snapshots_04](https://user-images.githubusercontent.com/32470118/111876103-845f1400-8973-11eb-9d51-d29f86040154.jpg)
-![GoldenHour-Snapshots_05](https://user-images.githubusercontent.com/32470118/111876104-845f1400-8973-11eb-952d-35861f70bb4e.jpg)
->>>>>>> 42314293e8e040cc9f22bb23a280ea77796d7155
