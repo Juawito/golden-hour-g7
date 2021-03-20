@@ -8,7 +8,13 @@ function rendertSunTimes() {
     sunriseText.text(sunrise);
     sunsetText.text(sunset);
 }
-backButton.on('click', function (){
-    document.location.replace('index.html');
+backButton.on('click', function () {
+    $('header').addClass('header-out');
+    $('button').addClass('button-out');
+    $('.sunrise-card').addClass('sunrise-card-out');
+    $('.sunset-card').addClass('sunset-card-out');
+    setTimeout(() => {
+        document.location.replace('index.html');
+    }, 1100)
 })
-rendertSunTimes();
+rendertSunTimes();n
