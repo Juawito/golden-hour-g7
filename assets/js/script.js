@@ -41,7 +41,11 @@ function getSunriseApi(lat, lon) {
             localStorage.setItem('Suntimes', JSON.stringify(sunTimes));
         })
         .then(function () {
-            document.location.replace('sunrise-sunset.html');
+            $('header').addClass('header-out');
+            $('.main-box').addClass('main-box-out');
+            setTimeout(() => {
+                document.location.replace('sunrise-sunset.html');
+            }, 1100)
         });
 }
 $('.searchbtn').on('click', function (event) {

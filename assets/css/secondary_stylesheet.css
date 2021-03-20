@@ -15,6 +15,10 @@ button{
     animation: backInUp;
     animation-duration: 2s;
 }
+.button-out {
+    animation: backOutDown;
+    animation-duration: 2s;
+}
 
 button i {
     color: var(--ltyellow);
@@ -28,6 +32,10 @@ body {
 }
 header {
     animation: backInDown;
+    animation-duration: 2s;
+}
+.header-out {
+    animation: backOutUp;
     animation-duration: 2s;
 }
 .header-title {
@@ -74,13 +82,19 @@ h4 {
     animation: backInUp;
     animation-duration: 2s;
 }
-
+.sunrise-card-out {
+    animation: backOutDown;
+    animation-duration: 2s;
+}
 .sunset-card {
     background-color: var(--deepnavy);
     animation: backInUp;
     animation-duration: 2s;
 }
-
+.sunset-card-out{
+    animation: backOutDown;
+    animation-duration: 2s;
+}
 #card-one {
     background-color: var(--yellow);
     color: var(--deepnavy);
