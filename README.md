@@ -18,7 +18,6 @@ GoldenHour is an app that allows photographer to find the “the golden hour” 
 * Sunrise and Sunset API
 
 ## Directions for Future Development
-<<<<<<< HEAD
 * Display the weather with image icon (rain, snow, sunny)
 * Enter location address instead of zip code
 * Suggest near by location of popular spot for photographer to visit during Golden Hour
