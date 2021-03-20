@@ -11,6 +11,10 @@
     --yellow: #FFE373;
     --deeporange: #fc7f1f;
 }
+button{
+    animation: backInUp;
+    animation-duration: 2s;
+}
 
 button i {
     color: var(--ltyellow);
@@ -22,19 +26,15 @@ body {
     background-position: center;
     height: fit-content;
 }
-
+header {
+    animation: backInDown;
+    animation-duration: 2s;
+}
 h1 {
     font-family: 'Ranchers', cursive;
     color: var(--purple);
     padding-top: 10px;
 }
-
-/* header {
-    background-image: url("../images/banner.png");
-    background-size: cover;
-    background-position: center;
-    height: 100%;
-} */
 
 p {
     font-family: 'Raleway', sans-serif;
@@ -63,10 +63,14 @@ h4 {
 
 .sunrise-card {
     background-color: var(--orange);
+    animation: backInUp;
+    animation-duration: 2s;
 }
 
 .sunset-card {
     background-color: var(--deepnavy);
+    animation: backInUp;
+    animation-duration: 2s;
 }
 
 #card-one {
