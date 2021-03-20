@@ -28,6 +28,10 @@ header {
     animation: backInDown;
     animation-duration: 2s;
 }
+.header-out {
+    animation: backOutUp;
+    animation-duration: 2s;
+}
 .header-title {
     display: flex;
     justify-content: center;
@@ -57,13 +61,16 @@ div {
     padding: 20px;
 }
 
-#main-box {
+.main-box {
     background: rgba(91, 62, 95, 0.6);
     animation: backInUp;
     animation-duration: 2s;
 
 }
-
+.main-box-out {
+    animation: backOutDown;
+    animation-duration: 2s;
+}
 h4 {
     color: var(--yellow);
     padding-bottom: 20px;
