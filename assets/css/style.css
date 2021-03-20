@@ -13,7 +13,7 @@
 }
 
 body {
-    background-image: url(../images/jorge-vasconez-c4cWawGBFv8-unsplash.jpg);
+    background-image: url(../images/6053656dab06c.jpg);
     background-size: cover;
     background-position: center;
     height: fit-content;
@@ -27,6 +27,14 @@ header {
 
     animation: backInDown;
     animation-duration: 2s;
+}
+.header-title {
+    display: flex;
+    justify-content: center;
+}
+#icon {
+    height: 200px;
+    width: 200px;
 }
 
 h1 {
@@ -57,7 +65,7 @@ div {
 }
 
 h4 {
-    color: var(--navy);
+    color: var(--yellow);
     padding-bottom: 20px;
     padding-top: 20px;
 }
