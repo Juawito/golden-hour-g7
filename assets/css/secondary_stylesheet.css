@@ -43,8 +43,9 @@ header {
     justify-content: center;
 }
 #icon {
-    height: 200px;
-    width: 200px;
+    height: 125px;
+    width: 375px;
+}
 }
 h1 {
     font-family: 'Ranchers', cursive;
@@ -73,7 +74,7 @@ div {
 }
 
 h4 {
-    color: var(--deepnavy);
+    color: var(--yellow);
     font-weight: bold;
 }
 
