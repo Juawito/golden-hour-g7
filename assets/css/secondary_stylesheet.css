@@ -15,13 +15,17 @@ button{
     animation: backInUp;
     animation-duration: 2s;
 }
+.button-out {
+    animation: backOutDown;
+    animation-duration: 2s;
+}
 
 button i {
     color: var(--ltyellow);
 }
 
 body {
-    background-image: url(../images/jorge-vasconez-c4cWawGBFv8-unsplash.jpg);
+    background-image: url(../images/6053656dab06c.jpg);
     background-size: cover;
     background-position: center;
     height: fit-content;
@@ -29,6 +33,18 @@ body {
 header {
     animation: backInDown;
     animation-duration: 2s;
+}
+.header-out {
+    animation: backOutUp;
+    animation-duration: 2s;
+}
+.header-title {
+    display: flex;
+    justify-content: center;
+}
+#icon {
+    height: 200px;
+    width: 200px;
 }
 h1 {
     font-family: 'Ranchers', cursive;
@@ -66,13 +82,19 @@ h4 {
     animation: backInUp;
     animation-duration: 2s;
 }
-
+.sunrise-card-out {
+    animation: backOutDown;
+    animation-duration: 2s;
+}
 .sunset-card {
     background-color: var(--deepnavy);
     animation: backInUp;
     animation-duration: 2s;
 }
-
+.sunset-card-out{
+    animation: backOutDown;
+    animation-duration: 2s;
+}
 #card-one {
     background-color: var(--yellow);
     color: var(--deepnavy);
